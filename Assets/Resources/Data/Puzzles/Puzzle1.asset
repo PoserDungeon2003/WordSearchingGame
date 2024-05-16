@@ -13,6 +13,40 @@ MonoBehaviour:
   m_Name: Puzzle1
   m_EditorClassIdentifier: 
   timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  Columns: 4
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - W
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 6
+    Row:
+    - ' '
+    - W
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 6
+    Row:
+    - ' '
+    - ' '
+    - W
+    - ' '
+    - ' '
+    - ' '
+  - Size: 6
+    Row:
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  SearchWords:
+  - Word: WORD
