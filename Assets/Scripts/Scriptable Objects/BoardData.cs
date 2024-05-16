@@ -10,7 +10,7 @@ public class BoardData : ScriptableObject
     [Serializable]
     public class SearchingWord
     {
-        public string word;
+        public string Word;
     }
 
     [Serializable]
@@ -22,7 +22,7 @@ public class BoardData : ScriptableObject
         public BoardRow() { }
         public BoardRow(int size)
         {
-            
+            CreateRow(size);
         }
         public void CreateRow(int size)
         {
