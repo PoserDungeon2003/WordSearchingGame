@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Puzzle1
   m_EditorClassIdentifier: 
   timeInSeconds: 0
-  Columns: 4
-  Rows: 6
+  Columns: 10
+  Rows: 10
   Board:
-  - Size: 6
+  - Size: 10
     Row:
     - W
     - ' '
@@ -24,24 +24,112 @@ MonoBehaviour:
     - ' '
     - ' '
     - ' '
-  - Size: 6
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - O
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - R
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - D
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
     Row:
     - ' '
-    - W
     - ' '
     - ' '
     - ' '
     - ' '
-  - Size: 6
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
     Row:
     - ' '
     - ' '
-    - W
     - ' '
     - ' '
     - ' '
-  - Size: 6
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
     Row:
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+  - Size: 10
+    Row:
+    - ' '
+    - ' '
+    - ' '
+    - ' '
     - ' '
     - ' '
     - ' '
@@ -49,4 +137,5 @@ MonoBehaviour:
     - ' '
     - ' '
   SearchWords:
+  - Word: WORD
   - Word: WORD

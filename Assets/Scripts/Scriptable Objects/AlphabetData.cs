@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetData : MonoBehaviour
+[Serializable]
+[CreateAssetMenu]
+public class AlphabetData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public class LetterData
     {
-        
+        public string letter;
+        public Sprite image;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<LetterData> AlphabetPlain = new List<LetterData>();
+    public List<LetterData> AlphabetNormal = new List<LetterData>();
+    public List<LetterData> AlphabetHighlighted = new List<LetterData>();
+    public List<LetterData> AlphabetWrong = new List<LetterData>();
 }
