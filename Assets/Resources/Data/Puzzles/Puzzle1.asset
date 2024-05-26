@@ -18,137 +18,128 @@ MonoBehaviour:
   Board:
   - Size: 10
     Row:
-    - Z
-    - Q
-    - R
-    - V
-    - G
-    - P
-    - B
-    - O
-    - R
-    - F
-  - Size: 10
-    Row:
-    - R
-    - Y
-    - V
-    - N
-    - A
-    - J
-    - A
     - S
-    - N
-    - K
+    - C
+    - A
+    - Q
+    - H
+    - A
+    - A
+    - Y
+    - D
+    - U
   - Size: 10
     Row:
     - U
-    - V
-    - A
-    - N
-    - X
-    - O
-    - B
+    - D
     - X
     - B
-    - I
-  - Size: 10
-    Row:
-    - J
     - Z
-    - O
-    - L
-    - Q
-    - P
-    - Y
-    - R
-    - V
-    - J
-  - Size: 10
-    Row:
-    - J
-    - V
-    - S
-    - V
-    - K
-    - C
-    - J
-    - T
-    - B
-    - X
-  - Size: 10
-    Row:
-    - M
+    - U
     - N
+    - E
     - T
-    - S
-    - B
     - H
-    - E
-    - W
-    - Y
-    - F
   - Size: 10
     Row:
-    - L
-    - E
-    - T
-    - P
-    - G
-    - Q
-    - Y
-    - P
-    - B
-    - Y
-  - Size: 10
-    Row:
-    - D
-    - Y
-    - K
-    - C
-    - X
-    - B
-    - P
-    - K
     - M
-    - J
-  - Size: 10
-    Row:
-    - X
-    - W
-    - E
+    - L
+    - D
+    - D
     - P
-    - Z
-    - R
+    - T
     - I
-    - K
-    - Y
-    - D
+    - X
+    - H
+    - G
   - Size: 10
     Row:
-    - B
+    - M
+    - T
+    - U
+    - K
+    - P
+    - U
+    - M
+    - R
+    - C
     - J
+  - Size: 10
+    Row:
+    - E
+    - F
+    - P
+    - H
+    - W
+    - M
     - A
-    - X
-    - X
-    - X
-    - Q
-    - Q
-    - Q
+    - U
+    - Z
+    - A
+  - Size: 10
+    Row:
+    - R
+    - O
+    - O
+    - N
+    - T
+    - N
+    - L
+    - V
+    - O
+    - L
+  - Size: 10
+    Row:
+    - R
+    - K
     - D
+    - I
+    - M
+    - W
+    - Y
+    - S
+    - O
+    - V
+  - Size: 10
+    Row:
+    - E
+    - Z
+    - Q
+    - C
+    - I
+    - R
+    - O
+    - K
+    - O
+    - Y
+  - Size: 10
+    Row:
+    - A
+    - Z
+    - A
+    - M
+    - N
+    - I
+    - T
+    - T
+    - H
+    - I
+  - Size: 10
+    Row:
+    - M
+    - T
+    - L
+    - G
+    - O
+    - P
+    - E
+    - W
+    - S
+    - Q
   SearchWords:
   - Word: SUMMER
+  - Word: ANIMAL
+  - Word: AUTUMN
+  - Word: CAT
   - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
-  - Word: WINTER
+  - Word: DOG

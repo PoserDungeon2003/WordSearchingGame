@@ -65,6 +65,7 @@ public class SearchingWordsList : MonoBehaviour
             _words[i].transform.SetParent(this.transform);
             _words[i].GetComponent<RectTransform>().localScale = squareScale;
             _words[i].GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);
+            _words[i].GetComponent<SearchingWord>().SetWord(currentGameData.selectedBoardData.SearchWords[i].Word);
         }
     }
     private Vector3 GetSquareScale(Vector3 defaultScale)
