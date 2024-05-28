@@ -126,7 +126,7 @@ public class BoardDataDrawer : Editor
             rect.y += 2;
 
             EditorGUI.PropertyField(
-                new Rect(rect.x, rect.y, EditorGUIUtility.labelWidth, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("Word"), GUIContent.none);
+                new Rect(rect.x, rect.y, EditorGUIUtility.labelWidth, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("word"), GUIContent.none);
         };
     }
 
@@ -148,11 +148,11 @@ public class BoardDataDrawer : Editor
             }
             foreach (var searchWord in GameDataInstance.SearchWords)
             {
-                var errorCounter = Regex.Matches(searchWord.Word, @"[a-z]").Count;
+                var errorCounter = Regex.Matches(searchWord.word, @"[a-z]").Count;
 
                 if (errorCounter > 0)
                 {
-                    searchWord.Word = searchWord.Word.ToUpper();
+                    searchWord.word = searchWord.word.ToUpper();
                 }
             }
         }

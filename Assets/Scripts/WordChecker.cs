@@ -90,7 +90,7 @@ public class WordChecker : MonoBehaviour
 	{
 		foreach(var searchingWord in currentGameData.selectedBoardData.SearchWords)
 		{
-			if(_word == searchingWord.Word)
+			if(_word == searchingWord.word)
 			{
 				GameEvents.CorrectWordMethod(_word, _correctSquareList);
 				_word = string.Empty;

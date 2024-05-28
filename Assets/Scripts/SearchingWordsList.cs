@@ -16,8 +16,12 @@ public class SearchingWordsList : MonoBehaviour
     private int _wordsNumber;
 
     private List<GameObject> _words = new();
-    private void Start()
+    private ApiClient _client = new();
+    private async void Start()
     {
+        var words = await _client.GetWordsAsync(1, 1);
+        currentGameData.selectedBoardData.SearchWords = words.words;
+
         _wordsNumber = currentGameData.selectedBoardData.SearchWords.Count;
 
         if (_wordsNumber < _columns)
@@ -65,7 +69,7 @@ public class SearchingWordsList : MonoBehaviour
             _words[i].transform.SetParent(this.transform);
             _words[i].GetComponent<RectTransform>().localScale = squareScale;
             _words[i].GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);
-            _words[i].GetComponent<SearchingWord>().SetWord(currentGameData.selectedBoardData.SearchWords[i].Word);
+            _words[i].GetComponent<SearchingWord>().SetWord(currentGameData.selectedBoardData.SearchWords[i].word);
         }
     }
     private Vector3 GetSquareScale(Vector3 defaultScale)
