@@ -55,4 +55,27 @@ public class GameEvents
     }
     //****************************************************
 
+    public delegate void BoardCompleted();
+    public static event ClearSelection OnBoardCompleted;
+    public static void BoardCompletedMethod()
+    {
+        if (OnBoardCompleted != null) OnBoardCompleted();
+    }
+    //****************************************************
+
+    public delegate void UnlockNextCategory();
+    public static event ClearSelection OnUnlockNextCategory;
+    public static void UnlockNextCategoryMethod()
+    {
+        if (OnUnlockNextCategory != null) OnUnlockNextCategory();
+    }
+    //****************************************************
+    public delegate void LoadNextLevel();
+    public static event LoadNextLevel OnLoadNextLevel;
+    public static void LoadNextLevelMethod()
+    {
+        if (OnLoadNextLevel != null) OnLoadNextLevel();
+    }
+    //****************************************************
+
 }

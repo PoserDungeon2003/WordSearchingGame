@@ -18,12 +18,17 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5983d10d14d406a468e321dfb65ee45a, type: 2}
     - {fileID: 11400000, guid: 56c0d4142cafbde48a1fa7ce97b8425d, type: 2}
   - categoryName: Animals
-    boardData: []
+    boardData:
+    - {fileID: 11400000, guid: 5555b569ab8113940b68ed31da4e135d, type: 2}
   - categoryName: Sport
-    boardData: []
+    boardData:
+    - {fileID: 11400000, guid: 846f7d38d575b3c48b8e9f148e7abdf4, type: 2}
   - categoryName: Hobbies
-    boardData: []
+    boardData:
+    - {fileID: 11400000, guid: beec4816ed36ea54fa3b4f859229b6e5, type: 2}
   - categoryName: Work
-    boardData: []
+    boardData:
+    - {fileID: 11400000, guid: 7fa6fa378ce654f47a561d19ba5a48db, type: 2}
   - categoryName: Countries
-    boardData: []
+    boardData:
+    - {fileID: 11400000, guid: e421065df50e740449cfddb166dd5ec7, type: 2}
