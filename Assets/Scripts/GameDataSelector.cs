@@ -18,7 +18,7 @@ public class GameDataSelector : MonoBehaviour
         {
             if (data.categoryName == currentGameData.selectedCategoryName)
             {
-                var boardIndex = 0; //TODO: this need to be read from the external file
+                var boardIndex = DataSaver.ReadCategoryCurrentIndexValues(currentGameData.selectedCategoryName);
 
                 if (boardIndex < levelData.data.Count)
                 {
