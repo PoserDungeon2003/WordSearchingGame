@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static Codice.CM.Common.CmCallContext;
 
 public class SelectPuzzleButton : MonoBehaviour
 {
@@ -32,7 +31,17 @@ public class SelectPuzzleButton : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void OnEnable()
+    {
+        AdManager.OnInterstitialAdsClosed += InterstitialAdsClosed;
+    }
+
+    private void OnDisable()
+    {
+        AdManager.OnInterstitialAdsClosed -= InterstitialAdsClosed;
+    }
+
+    private void InterstitialAdsClosed()
     {
         
     }
@@ -68,6 +77,7 @@ public class SelectPuzzleButton : MonoBehaviour
     private void OnButtonClick()
     {
         gameData.selectedCategoryName = gameObject.name;
+        AdManager.Instance.ShowInterstitialAd();
         SceneManager.LoadScene(gameSceneName);
     }
 }

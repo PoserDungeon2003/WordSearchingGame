@@ -43,6 +43,7 @@ public class WordChecker : MonoBehaviour
 	{
 		_assignedPoints = 0;
 		_completedWords = 0;
+		AdManager.Instance.ShowBanner();
 	}
 
 	void Update()

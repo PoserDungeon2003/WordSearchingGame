@@ -1,4 +1,5 @@
 using GoogleMobileAds.Api;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class AdManager : MonoBehaviour
 
     public static AdManager Instance;
 
+    public static Action OnInterstitialAdsClosed;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,14 +34,29 @@ public class AdManager : MonoBehaviour
 
     void Start()
     {
+        var adRequest = new AdRequest();
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
+            //CreateBanner(adRequest);
+            LoadInterstitialAd(adRequest);
         });
-        var adRequest = new AdRequest();
-        CreateBanner(adRequest);
-        LoadInterstitialAd(adRequest);
+
+        this._interstitial.OnAdFullScreenContentClosed += OnInterstitialAdsClosed;
+    }
+
+    private void OnDisable()
+    {
+        this._interstitial.OnAdFullScreenContentClosed -= OnInterstitialAdsClosed;
+    }
+
+    private void InterstitialAdClosed(object sender, EventArgs e)
+    {
+        if (OnInterstitialAdsClosed != null)
+        {
+            OnInterstitialAdsClosed();
+        }
     }
 
     /// <summary>
@@ -67,6 +85,7 @@ public class AdManager : MonoBehaviour
                       + ad.GetResponseInfo());
 
             this._interstitial = ad;
+            RegisterEventHandlers(_interstitial);
         });
     }
 
@@ -96,4 +115,42 @@ public class AdManager : MonoBehaviour
     public void HideBanner() => _bannerView.Hide();
 
     public void ShowBanner() => _bannerView.Show();
+
+    private void RegisterEventHandlers(InterstitialAd interstitialAd)
+    {
+        // Raised when the ad is estimated to have earned money.
+        interstitialAd.OnAdPaid += (AdValue adValue) =>
+        {
+            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
+                adValue.Value,
+                adValue.CurrencyCode));
+        };
+        // Raised when an impression is recorded for an ad.
+        interstitialAd.OnAdImpressionRecorded += () =>
+        {
+            Debug.Log("Interstitial ad recorded an impression.");
+        };
+        // Raised when a click is recorded for an ad.
+        interstitialAd.OnAdClicked += () =>
+        {
+            Debug.Log("Interstitial ad was clicked.");
+        };
+        // Raised when an ad opened full screen content.
+        interstitialAd.OnAdFullScreenContentOpened += () =>
+        {
+            Debug.Log("Interstitial ad full screen content opened.");
+        };
+        // Raised when the ad closed full screen content.
+        interstitialAd.OnAdFullScreenContentClosed += () =>
+        {
+            Debug.Log("Interstitial ad full screen content closed.");
+        };
+        // Raised when the ad failed to open full screen content.
+        interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError("Interstitial ad failed to open full screen content " +
+                           "with error : " + error);
+        };
+    }
+
 }
