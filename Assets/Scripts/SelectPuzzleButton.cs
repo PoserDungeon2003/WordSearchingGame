@@ -77,7 +77,7 @@ public class SelectPuzzleButton : MonoBehaviour
     private void OnButtonClick()
     {
         gameData.selectedCategoryName = gameObject.name;
-        AdManager.Instance.ShowInterstitialAd();
+        //AdManager.Instance.ShowInterstitialAd();
         SceneManager.LoadScene(gameSceneName);
     }
 }

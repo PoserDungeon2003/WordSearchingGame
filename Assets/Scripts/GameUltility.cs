@@ -12,5 +12,5 @@ public class GameUltility : MonoBehaviour
 
     public void ExitApplication() => Application.Quit();
 
-    public void HideBannerAds() => AdManager.Instance.ShowInterstitialAd();
+    public void HideBannerAds() => AdManager.Instance.HideBanner();
 }

@@ -9,6 +9,8 @@ public class AdManager : MonoBehaviour
     public string appId;
     public string adBannerId;
     public string adInterstitialId;
+    public string adBannerIdTestDevice;
+    public string adInterstitialIdTestDevice;
     public AdPosition bannerPosition;
     public bool testDevice = false;
 
@@ -35,6 +37,15 @@ public class AdManager : MonoBehaviour
     void Start()
     {
         var adRequest = new AdRequest();
+        if (testDevice)
+        {
+            RequestBanner();
+            adInterstitialId = adInterstitialIdTestDevice;
+            adBannerId = adBannerIdTestDevice;
+            RequestConfiguration requestConfiguration = new RequestConfiguration();
+            requestConfiguration.TestDeviceIds.Add("217ED492E4571501ED78FCA4E7818388");
+            MobileAds.SetRequestConfiguration(requestConfiguration);
+        }
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
@@ -72,7 +83,7 @@ public class AdManager : MonoBehaviour
         }
         Debug.Log("Loading the interstitial ad.");
 
-        InterstitialAd.Load(appId, adRequest, (InterstitialAd ad, LoadAdError error) =>
+        InterstitialAd.Load(adInterstitialId, adRequest, (InterstitialAd ad, LoadAdError error) =>
         {
             // if error is not null, the load request failed.
             if (error != null || ad == null)
@@ -156,6 +167,24 @@ public class AdManager : MonoBehaviour
                            "with error : " + error);
             LoadInterstitialAd(adRequest);
         };
+    }
+
+    private void RequestBanner()
+    {
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+#elif UNITY_IPHONE
+        string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+#else
+        string adUnitId = "unexpected_platform";
+#endif
+
+        // Create a 320x50 banner at the top of the screen.
+        var bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
+        // Create an empty ad request.
+        AdRequest request = new AdRequest();
+        // Load the banner with the request.
+        bannerView.LoadAd(request);
     }
 
 }

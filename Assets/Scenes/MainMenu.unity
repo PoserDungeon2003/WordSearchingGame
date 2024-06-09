@@ -928,6 +928,8 @@ MonoBehaviour:
   appId: ca-app-pub-1174747375207958~1388312010
   adBannerId: ca-app-pub-1174747375207958/4679957245
   adInterstitialId: ca-app-pub-1174747375207958/5067702575
+  adBannerIdTestDevice: ca-app-pub-3940256099942544/6300978111
+  adInterstitialIdTestDevice: ca-app-pub-3940256099942544/1033173712
   bannerPosition: 1
   testDevice: 0
 --- !u!4 &1924728078
