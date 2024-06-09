@@ -39,16 +39,16 @@ public class AdManager : MonoBehaviour
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
-            //CreateBanner(adRequest);
+            CreateBanner(adRequest);
             LoadInterstitialAd(adRequest);
         });
 
-        this._interstitial.OnAdFullScreenContentClosed += OnInterstitialAdsClosed;
+        _interstitial.OnAdFullScreenContentClosed += OnInterstitialAdsClosed;
     }
 
     private void OnDisable()
     {
-        this._interstitial.OnAdFullScreenContentClosed -= OnInterstitialAdsClosed;
+        _interstitial.OnAdFullScreenContentClosed -= OnInterstitialAdsClosed;
     }
 
     private void InterstitialAdClosed(object sender, EventArgs e)
@@ -64,10 +64,10 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void LoadInterstitialAd(AdRequest adRequest)
     {
-        if (this._interstitial != null)
+        if (_interstitial != null)
         {
-            this._interstitial.Destroy();
-            this._interstitial = null;
+            _interstitial.Destroy();
+            _interstitial = null;
         }
         Debug.Log("Loading the interstitial ad.");
 
@@ -84,8 +84,8 @@ public class AdManager : MonoBehaviour
             Debug.Log("Interstitial ad loaded with response : "
                       + ad.GetResponseInfo());
 
-            this._interstitial = ad;
-            RegisterEventHandlers(_interstitial);
+            _interstitial = ad;
+            //RegisterEventHandlers(_interstitial);
         });
     }
 
@@ -94,10 +94,10 @@ public class AdManager : MonoBehaviour
     /// </summary>
     public void ShowInterstitialAd()
     {
-        if (this._interstitial != null && this._interstitial.CanShowAd())
+        if (_interstitial != null && _interstitial.CanShowAd())
         {
             Debug.Log("Showing interstitial ad.");
-            this._interstitial.Show();
+            _interstitial.Show();
         }
         else
         {
