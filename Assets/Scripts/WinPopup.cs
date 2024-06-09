@@ -31,13 +31,13 @@ public class WinPopup : MonoBehaviour
 
     private void ShowWinPopup()
     {
-        AdManager.Instance.ShowInterstitialAd();
+        //AdManager.Instance.ShowInterstitialAd();
         winPopup.SetActive(true);
     }
 
     public void LoadNextLevel()
     {
-        AdManager.Instance.ShowInterstitialAd();
+        //AdManager.Instance.ShowInterstitialAd();
         GameEvents.LoadNextLevelMethod();
     }
 }

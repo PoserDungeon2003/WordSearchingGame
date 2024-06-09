@@ -12,4 +12,6 @@ public class GameUltility : MonoBehaviour
     public void HideBannerAds() => AdManager.Instance.HideBanner();
 
     public void MuteToggleBackgroundMusic() => SoundManager.instance.ToggleBackgroundMusic();
+
+    public void MuteToggleSoundFX() => SoundManager.instance.ToggleSoundFX();
 }

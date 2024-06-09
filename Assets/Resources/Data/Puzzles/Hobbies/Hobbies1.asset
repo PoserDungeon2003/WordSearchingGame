@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Hobbies1
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
+  timeInSeconds: 200
   Columns: 6
   Rows: 6
   Board:
