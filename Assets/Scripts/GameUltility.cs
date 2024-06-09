@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameUltility : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
+    public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName);
 
     public void ExitApplication() => Application.Quit();
 
     public void HideBannerAds() => AdManager.Instance.HideBanner();
+
+    public void MuteToggleBackgroundMusic() => SoundManager.instance.ToggleBackgroundMusic();
 }

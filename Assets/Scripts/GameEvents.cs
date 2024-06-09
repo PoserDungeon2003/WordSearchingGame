@@ -84,5 +84,11 @@ public class GameEvents
         if (OnGameOver != null) OnGameOver();
     }
     //****************************************************
-
+    public delegate void ToggleSoundsFX();
+    public static event ToggleSoundsFX OnToggleSoundsFX;
+    public static void OnToggleSoundsFXMethod()
+    {
+        if (OnToggleSoundsFX != null) OnToggleSoundsFX();
+    }
+    //****************************************************
 }
