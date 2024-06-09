@@ -44,7 +44,7 @@ public class WordChecker : MonoBehaviour
 		currentGameData.selectedBoardData.ClearData();
 		_assignedPoints = 0;
 		_completedWords = 0;
-		AdManager.Instance.ShowBanner();
+		//AdManager.Instance.ShowBanner();
 	}
 
 	void Update()
