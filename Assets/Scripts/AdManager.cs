@@ -48,7 +48,8 @@ public class AdManager : MonoBehaviour
 
     private void OnDisable()
     {
-        _interstitial.OnAdFullScreenContentClosed -= OnInterstitialAdsClosed;
+        if (_interstitial != null)
+            _interstitial.OnAdFullScreenContentClosed -= OnInterstitialAdsClosed;
     }
 
     private void InterstitialAdClosed(object sender, EventArgs e)
@@ -85,7 +86,7 @@ public class AdManager : MonoBehaviour
                       + ad.GetResponseInfo());
 
             _interstitial = ad;
-            //RegisterEventHandlers(_interstitial);
+            RegisterEventHandlers(_interstitial);
         });
     }
 
@@ -143,13 +144,17 @@ public class AdManager : MonoBehaviour
         // Raised when the ad closed full screen content.
         interstitialAd.OnAdFullScreenContentClosed += () =>
         {
+            var adRequest = new AdRequest();
             Debug.Log("Interstitial ad full screen content closed.");
+            LoadInterstitialAd(adRequest);
         };
         // Raised when the ad failed to open full screen content.
         interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
         {
+            var adRequest = new AdRequest();
             Debug.LogError("Interstitial ad failed to open full screen content " +
                            "with error : " + error);
+            LoadInterstitialAd(adRequest);
         };
     }
 
