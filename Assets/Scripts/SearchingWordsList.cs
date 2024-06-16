@@ -16,10 +16,9 @@ public class SearchingWordsList : MonoBehaviour
     private int _wordsNumber;
 
     private List<GameObject> _words = new();
-    private ApiClient _client = new();
     private async void Start()
     {
-        var words = await _client.GetWordsAsync(1, 1);
+        var words = await ApiClient.Instance.GetWordsAsync();
         currentGameData.selectedBoardData.SearchWords = words.words;
 
         _wordsNumber = currentGameData.selectedBoardData.SearchWords.Count;

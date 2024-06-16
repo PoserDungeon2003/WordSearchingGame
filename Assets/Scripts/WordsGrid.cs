@@ -78,6 +78,7 @@ public class WordsGrid : MonoBehaviour
             {
                 foreach (var squareLetter in squares.Row)
                 {
+                    Debug.Log("square letter" + squares.Row);
                     var normalLetterData = alphabetData.AlphabetNormal.Find(data => data.letter == squareLetter);
                     var selectedLetterData = alphabetData.AlphabetHighlighted.Find(data => data.letter == squareLetter);
                     var correctLetterData = alphabetData.AlphabetWrong.Find(data => data.letter == squareLetter);

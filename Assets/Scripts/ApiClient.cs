@@ -1,22 +1,16 @@
-using Codice.CM.Client.Differences;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
-
-public interface IWordSearchingGame
-{
-    Task<WordDataList> GetWordsAsync(int topicId, int difficultyId);
-}
 
 [Serializable]
 public class WordData
 {
     public string word;
+    public bool Found;
 }
 
 [Serializable]
@@ -25,16 +19,27 @@ public class WordDataList
     public List<WordData> words;
 }
 
-public class ApiClient : IWordSearchingGame
+public class ApiClient : MonoBehaviour
 {
-    private readonly string _baseUrl = "https://localhost:7111";
-    public ApiClient() { }
-    public ApiClient(string baseUrl)
-    {
-        _baseUrl = baseUrl;
-    }
+    public int topicId;
+    public int difficultyId;
+    public static ApiClient Instance;
 
-    public async Task<WordDataList> GetWordsAsync(int topicId, int difficultyId)
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    private readonly string _baseUrl = "https://localhost:7111";
+
+    public async Task<WordDataList> GetWordsAsync()
     {
         string url = $"{_baseUrl}/api/Word/{topicId}/{difficultyId}";
         using UnityWebRequest request = UnityWebRequest.Get(url);
@@ -57,6 +62,10 @@ public class ApiClient : IWordSearchingGame
         string response = request.downloadHandler.text;
         string wrappedJson = $"{{\"words\":{response}}}";
         WordDataList words = JsonUtility.FromJson<WordDataList>(wrappedJson);
+        if (words.words.Count > 5)
+        {
+            words.words = words.words.GetRange(0, 5);
+        }
         words.words.ForEach(word =>
         {
             word.word = word.word.ToUpper();

@@ -13,128 +13,57 @@ MonoBehaviour:
   m_Name: Food2
   m_EditorClassIdentifier: 
   timeInSeconds: 200
-  Columns: 10
-  Rows: 10
+  Columns: 6
+  Rows: 6
   Board:
-  - Size: 10
+  - Size: 6
     Row:
-    - W
-    - R
-    - Q
-    - J
-    - V
-    - H
-    - J
-    - S
-    - M
-    - U
-  - Size: 10
-    Row:
-    - T
-    - P
-    - N
-    - S
-    - S
-    - D
-    - S
-    - O
-    - B
-    - A
-  - Size: 10
-    Row:
-    - M
-    - E
-    - A
-    - F
-    - D
-    - Y
-    - T
-    - W
-    - M
-    - U
-  - Size: 10
-    Row:
-    - P
-    - Y
-    - N
-    - Q
-    - U
-    - P
-    - O
-    - U
-    - K
-    - B
-  - Size: 10
-    Row:
-    - N
-    - I
-    - P
-    - R
-    - W
-    - J
-    - L
-    - B
-    - L
-    - C
-  - Size: 10
-    Row:
-    - S
-    - I
-    - Z
-    - W
-    - L
-    - G
-    - Z
-    - G
-    - J
-    - K
-  - Size: 10
-    Row:
-    - I
-    - P
-    - L
-    - Z
-    - C
-    - S
-    - N
-    - A
-    - Z
-    - Q
-  - Size: 10
-    Row:
-    - B
-    - D
-    - N
-    - R
-    - A
-    - M
-    - E
-    - B
-    - Z
-    - F
-  - Size: 10
-    Row:
-    - W
-    - T
-    - F
-    - D
     - X
-    - W
-    - W
-    - L
-    - Y
-    - A
-  - Size: 10
-    Row:
     - T
-    - M
-    - A
-    - Z
+    - D
+    - C
     - B
-    - Y
+    - Z
+  - Size: 6
+    Row:
+    - N
+    - V
+    - T
     - H
-    - Y
-    - K
+    - V
+    - D
+  - Size: 6
+    Row:
+    - Q
+    - L
+    - F
+    - I
     - S
+    - H
+  - Size: 6
+    Row:
+    - A
+    - R
+    - P
+    - I
+    - N
+    - T
+  - Size: 6
+    Row:
+    - O
+    - O
+    - Z
+    - S
+    - K
+    - L
+  - Size: 6
+    Row:
+    - U
+    - M
+    - G
+    - R
+    - B
+    - H
   SearchWords:
-  - Word: PIZZA
+  - word: FISH
+    Found: 0

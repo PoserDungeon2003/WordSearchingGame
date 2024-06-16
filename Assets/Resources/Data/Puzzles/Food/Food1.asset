@@ -13,128 +13,57 @@ MonoBehaviour:
   m_Name: Food1
   m_EditorClassIdentifier: 
   timeInSeconds: 200
-  Columns: 10
-  Rows: 10
+  Columns: 6
+  Rows: 6
   Board:
-  - Size: 10
+  - Size: 6
     Row:
     - B
-    - A
-    - G
-    - A
-    - G
-    - Y
+    - V
     - H
-    - F
-    - G
-    - M
-  - Size: 10
-    Row:
+    - D
     - R
-    - M
-    - U
-    - H
+    - J
+  - Size: 6
+    Row:
     - S
-    - L
+    - R
     - K
-    - L
-    - U
-    - C
-  - Size: 10
-    Row:
-    - E
-    - G
-    - U
-    - B
-    - R
-    - X
-    - V
-    - V
-    - R
-    - O
-  - Size: 10
-    Row:
-    - A
-    - J
-    - Q
-    - W
-    - F
-    - C
-    - Z
-    - H
-    - F
-    - U
-  - Size: 10
-    Row:
-    - D
-    - Z
-    - L
-    - R
-    - F
-    - Y
-    - X
-    - N
-    - I
-    - I
-  - Size: 10
-    Row:
-    - N
-    - B
-    - C
-    - V
-    - I
-    - J
-    - I
-    - F
-    - Y
-    - V
-  - Size: 10
-    Row:
-    - L
-    - D
-    - R
-    - H
-    - H
-    - J
-    - F
-    - E
-    - I
-    - L
-  - Size: 10
-    Row:
-    - R
-    - G
-    - Z
-    - N
-    - V
-    - D
-    - M
-    - W
-    - V
-    - T
-  - Size: 10
-    Row:
-    - Z
-    - F
-    - D
-    - Y
-    - A
-    - X
-    - D
-    - F
-    - M
-    - B
-  - Size: 10
-    Row:
-    - H
-    - C
-    - R
-    - J
-    - G
-    - Z
-    - M
-    - G
     - P
+    - O
+    - W
+  - Size: 6
+    Row:
+    - E
     - A
+    - E
+    - Z
+    - Y
+    - H
+  - Size: 6
+    Row:
+    - A
+    - G
+    - Z
+    - A
+    - U
+    - U
+  - Size: 6
+    Row:
+    - P
+    - Q
+    - P
+    - N
+    - D
+    - K
+  - Size: 6
+    Row:
+    - M
+    - F
+    - D
+    - O
+    - K
+    - K
   SearchWords:
-  - Word: BREAD
+  - word: BREAD
+    Found: 0
