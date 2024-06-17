@@ -16,6 +16,7 @@ public class SearchingWordsList : MonoBehaviour
     private int _wordsNumber;
 
     private List<GameObject> _words = new();
+
     private async void Start()
     {
         var words = await ApiClient.Instance.GetWordsAsync();
@@ -30,6 +31,7 @@ public class SearchingWordsList : MonoBehaviour
         CreateWordObjects();
         SetWordsPosition();
     }
+
     private void CalculateColumnsAndRowsNumber()
     {
         do
