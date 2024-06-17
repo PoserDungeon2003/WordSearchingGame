@@ -1,6 +1,10 @@
 using Firebase.Auth;
+using i5.Toolkit.Core.OpenIDConnectClient;
+using i5.Toolkit.Core.ServiceCore;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class FirebaseManager : MonoBehaviour
@@ -12,13 +16,15 @@ public class FirebaseManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
     }
 
-    public void SignInWithGoogle()
+    public async void SignIn() => await SignInWithGoogle();
+
+    private void SignInUsingFirebase(string accessToken)
     {
         Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
 
         // Configure Google sign-in
         Firebase.Auth.FirebaseUser user = null;
-        Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential("YOUR_GOOGLE_ID_TOKEN", null);
+        Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(null, accessToken);
 
         auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
         {
@@ -36,5 +42,20 @@ public class FirebaseManager : MonoBehaviour
             user = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.UserId);
         });
+    }
+
+    private async Task SignInWithGoogle()
+    {
+        ServiceManager.GetService<OpenIDConnectService>().LoginCompleted += OnLoginCompleted;
+
+        await ServiceManager.GetService<OpenIDConnectService>().OpenLoginPageAsync();
+    }
+
+    private async void OnLoginCompleted(object sender, EventArgs e)
+    {
+        Debug.Log("Login completed");
+        string accessToken = ServiceManager.GetService<OpenIDConnectService>().AccessToken;
+        var userInfo = await ServiceManager.GetService<OpenIDConnectService>().GetUserDataAsync();
+        Debug.Log("Access token: " + userInfo.Username);
     }
 }
