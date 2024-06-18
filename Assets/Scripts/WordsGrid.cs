@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using static BoardData;
 
 public class WordsGrid : MonoBehaviour
 {
@@ -10,11 +14,12 @@ public class WordsGrid : MonoBehaviour
     public float squareOffset = 0.0f;
     public float topPosition;
     private List<GameObject> _squareList = new List<GameObject>();
-
+    List<string> characters = new List<string>();
 
     void Start()
     {
-        SpawnGridSquares();
+        AddCharacterToGrid();
+        SpawnGridSquares(currentGameData.selectedBoardData.Board);
         SetSquarePosition();
     }
 
@@ -65,11 +70,9 @@ public class WordsGrid : MonoBehaviour
         startPosition.y += midWidthHeight;
 
         return startPosition;
-
-
     }
 
-    private void SpawnGridSquares()
+    private void SpawnGridSquares(BoardRow[] Board)
     {
         if (currentGameData != null)
         {
@@ -153,5 +156,23 @@ public class WordsGrid : MonoBehaviour
         float height = Camera.main.orthographicSize * 2;
         float width = (1.7f * height) * Screen.width / Screen.height;
         return width / 2;
+    }
+
+    private async void AddCharacterToGrid()
+    {
+        var categoryName = currentGameData.selectedCategoryName;
+        var currentBoardIndex = DataSaver.ReadCategoryCurrentIndexValues(categoryName);
+        var words = await ApiClient.Instance.GetWordsAsync(currentBoardIndex + 1);
+        foreach (var word in words.words)
+        {
+            foreach (var character in word.word)
+            {
+                characters.Add(character.ToString());
+            }
+        }
+        foreach (var character in characters)
+        {
+            Debug.Log("Characters" + character + " ");
+        }
     }
 }

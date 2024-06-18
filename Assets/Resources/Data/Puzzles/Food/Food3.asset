@@ -10,68 +10,58 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
-  m_Name: Food1
+  m_Name: Food3
   m_EditorClassIdentifier: 
-  timeInSeconds: 120
+  timeInSeconds: 60
   Columns: 6
   Rows: 6
   Board:
   - Size: 6
     Row:
-    - N
-    - Z
-    - F
     - T
-    - M
-    - Z
-  - Size: 6
-    Row:
-    - O
-    - O
-    - A
-    - V
-    - L
-    - A
-  - Size: 6
-    Row:
-    - P
-    - H
-    - O
-    - H
-    - D
     - C
+    - Z
+    - N
+    - S
+    - F
   - Size: 6
     Row:
+    - S
     - E
-    - U
     - Z
-    - D
-    - E
+    - U
+    - J
+    - Q
+  - Size: 6
+    Row:
     - A
+    - B
+    - B
+    - J
+    - P
+    - X
+  - Size: 6
+    Row:
+    - O
+    - C
+    - O
+    - R
+    - Y
+    - G
+  - Size: 6
+    Row:
+    - T
+    - T
+    - U
+    - N
+    - O
+    - D
   - Size: 6
     Row:
     - G
-    - U
     - R
+    - A
     - P
-    - L
-    - K
-  - Size: 6
-    Row:
-    - G
-    - Z
-    - R
-    - I
-    - C
     - E
-  SearchWords:
-  - word: CAKE
-    Found: 1
-  - word: RICE
-    Found: 1
-  - word: PHO
-    Found: 1
-  - word: NOODLE
-    Found: 1
-  - word: EGG
-    Found: 1
+    - S
+  SearchWords: []

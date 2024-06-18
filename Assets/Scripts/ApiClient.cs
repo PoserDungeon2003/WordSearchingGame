@@ -51,6 +51,7 @@ public class ApiClient : MonoBehaviour
     public UserLoginRS _userLoginRS;
     public string accessToken;
     public int currentIndex;
+    public WordDataList words;
 
     private void Awake()
     {
@@ -84,7 +85,7 @@ public class ApiClient : MonoBehaviour
             throw new HttpRequestException(request.error);
         }
 
-        Debug.Log("response" + request.downloadHandler.text);
+        Debug.Log("response " + request.downloadHandler.text);
 
         string response = request.downloadHandler.text;
         string wrappedJson = $"{{\"words\":{response}}}";
@@ -97,9 +98,8 @@ public class ApiClient : MonoBehaviour
         {
             word.word = word.word.ToUpper();
         });
-
+        this.words = words;
         return words;
-
     }
 
     public IEnumerator GoogleSignupUser(UserData userData)

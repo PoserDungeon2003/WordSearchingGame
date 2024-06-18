@@ -12,58 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Food2
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
+  timeInSeconds: 90
   Columns: 6
   Rows: 6
   Board:
   - Size: 6
     Row:
-    - X
-    - T
-    - D
-    - C
     - B
-    - Z
-  - Size: 6
-    Row:
-    - N
-    - V
-    - T
-    - H
-    - V
+    - S
+    - D
+    - I
+    - K
     - D
   - Size: 6
     Row:
-    - Q
-    - L
-    - F
-    - I
-    - S
-    - H
-  - Size: 6
-    Row:
+    - J
+    - U
+    - W
+    - E
     - A
-    - R
-    - P
-    - I
-    - N
-    - T
+    - A
   - Size: 6
     Row:
-    - O
-    - O
-    - Z
+    - N
     - S
-    - K
+    - R
+    - Z
+    - I
     - L
   - Size: 6
     Row:
     - U
-    - M
-    - G
-    - R
-    - B
     - H
-  SearchWords:
-  - word: FISH
-    Found: 0
+    - Z
+    - G
+    - O
+    - A
+  - Size: 6
+    Row:
+    - E
+    - I
+    - R
+    - F
+    - E
+    - S
+  - Size: 6
+    Row:
+    - P
+    - A
+    - S
+    - T
+    - A
+    - R
+  SearchWords: []
