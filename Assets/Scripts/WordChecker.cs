@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WordChecker : MonoBehaviour
 {
 	public GameData currentGameData;
+	public GameLevelData gameLevelData;
+
 	private string _word;
 	private int _assignedPoints = 0;
 	private int _completedWords = 0;
@@ -16,25 +19,34 @@ public class WordChecker : MonoBehaviour
 	private Vector3 _rayStartPosition;
 	private List<int> _correctSquareList = new List<int>();
 	private Ray _currentRay = new Ray();
+
 	private void OnEnable()
 	{
 		GameEvents.OnCheckSquare += SquareSelected;
 		GameEvents.OnClearSelection += ClearSelection;
-
+		GameEvents.OnLoadNextLevel += LoadNextGameLevel;
 	}
+
 	private void OnDisable()
 	{
 		GameEvents.OnCheckSquare -= SquareSelected;
         GameEvents.OnClearSelection -= ClearSelection;
+        GameEvents.OnLoadNextLevel -= LoadNextGameLevel;
     }
+
+	private void LoadNextGameLevel()
+	{
+		SceneManager.LoadScene("GameScene");
+	}
 
     void Start()
 	{
+		currentGameData.selectedBoardData.ClearData();
 		_assignedPoints = 0;
 		_completedWords = 0;
+		//AdManager.Instance.ShowBanner();
 	}
 
-	
 	void Update()
 	{
 		if (_assignedPoints > 0 && Application.isEditor)
@@ -49,6 +61,7 @@ public class WordChecker : MonoBehaviour
 			Debug.DrawRay(_rayDiagonalRightDown.origin, _rayDiagonalRightDown.direction * 4);
 		}
 	}
+
 	private void SquareSelected(string letter,Vector3 squarePosition,int squareIndex)
 	{
 		if (_assignedPoints == 0)
@@ -90,11 +103,14 @@ public class WordChecker : MonoBehaviour
 	{
 		foreach(var searchingWord in currentGameData.selectedBoardData.SearchWords)
 		{
-			if(_word == searchingWord.Word)
+			if(_word == searchingWord.Word && searchingWord.Found == false)
 			{
+				searchingWord.Found = true;
 				GameEvents.CorrectWordMethod(_word, _correctSquareList);
+				_completedWords++;
 				_word = string.Empty;
 				_correctSquareList.Clear();
+				CheckBoardCompleted();
 				return;
 			}
 		}
@@ -148,10 +164,73 @@ public class WordChecker : MonoBehaviour
 		}
 		return _rayDown;
 	}
+
 	private void ClearSelection()
 	{
 		_assignedPoints = 0;
 		_correctSquareList.Clear();
 		_word = string.Empty;
+	}
+
+	private void CheckBoardCompleted()
+	{
+		bool loadNextCategory = false;
+
+		if (currentGameData.selectedBoardData.SearchWords.Count == _completedWords)
+		{
+			// Save current level progress
+			var categoryName = currentGameData.selectedCategoryName;
+			var currentBoardIndex = DataSaver.ReadCategoryCurrentIndexValues(categoryName);
+			var nextBoardIndex = -1;
+			var currentCategoryIndex = 0;
+			bool readNextLevelName = false;
+
+            for (int index = 0; index < gameLevelData.data.Count; index++)
+            {
+                if (readNextLevelName)
+				{
+					nextBoardIndex = DataSaver.ReadCategoryCurrentIndexValues(gameLevelData.data[index].categoryName);
+					readNextLevelName = false;
+                }
+
+				if (gameLevelData.data[index].categoryName == categoryName)
+				{
+					readNextLevelName = true;
+					currentCategoryIndex = index;
+				}
+            }
+
+			var currentLevelSize = gameLevelData.data[currentCategoryIndex].boardData.Count;
+			if (currentBoardIndex < currentLevelSize)
+				currentBoardIndex += 1;
+			DataSaver.SaveCategoryData(categoryName, currentBoardIndex);
+
+			// Unlock next category
+			if (currentBoardIndex >= currentLevelSize)
+			{
+				currentCategoryIndex++;
+				if (currentCategoryIndex < gameLevelData.data.Count)
+				{
+					categoryName = gameLevelData.data[currentCategoryIndex].categoryName;
+					currentBoardIndex = 0;
+					loadNextCategory = true;
+
+					if (nextBoardIndex <= 0)
+					{
+						DataSaver.SaveCategoryData(categoryName, currentBoardIndex);
+					}
+				}
+				else
+				{
+					SceneManager.LoadScene("SelectCategory");
+				}
+			}
+			else
+			{
+				GameEvents.BoardCompletedMethod();
+			}
+			if (loadNextCategory)
+				GameEvents.UnlockNextCategoryMethod();
+        }
 	}
 }

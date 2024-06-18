@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
+  m_Name: Food1
+  m_EditorClassIdentifier: 
+  timeInSeconds: 200
+  Columns: 10
+  Rows: 10
+  Board:
+  - Size: 10
+    Row:
+    - B
+    - A
+    - G
+    - A
+    - G
+    - Y
+    - H
+    - F
+    - G
+    - M
+  - Size: 10
+    Row:
+    - R
+    - M
+    - U
+    - H
+    - S
+    - L
+    - K
+    - L
+    - U
+    - C
+  - Size: 10
+    Row:
+    - E
+    - G
+    - U
+    - B
+    - R
+    - X
+    - V
+    - V
+    - R
+    - O
+  - Size: 10
+    Row:
+    - A
+    - J
+    - Q
+    - W
+    - F
+    - C
+    - Z
+    - H
+    - F
+    - U
+  - Size: 10
+    Row:
+    - D
+    - Z
+    - L
+    - R
+    - F
+    - Y
+    - X
+    - N
+    - I
+    - I
+  - Size: 10
+    Row:
+    - N
+    - B
+    - C
+    - V
+    - I
+    - J
+    - I
+    - F
+    - Y
+    - V
+  - Size: 10
+    Row:
+    - L
+    - D
+    - R
+    - H
+    - H
+    - J
+    - F
+    - E
+    - I
+    - L
+  - Size: 10
+    Row:
+    - R
+    - G
+    - Z
+    - N
+    - V
+    - D
+    - M
+    - W
+    - V
+    - T
+  - Size: 10
+    Row:
+    - Z
+    - F
+    - D
+    - Y
+    - A
+    - X
+    - D
+    - F
+    - M
+    - B
+  - Size: 10
+    Row:
+    - H
+    - C
+    - R
+    - J
+    - G
+    - Z
+    - M
+    - G
+    - P
+    - A
+  SearchWords:
+  - Word: BREAD
