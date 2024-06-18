@@ -48,8 +48,9 @@ public class ApiClient : MonoBehaviour
     public int topicId;
     public int difficultyId;
     public static ApiClient Instance;
-
-    private UserLoginRS _userLoginRS;
+    public UserLoginRS _userLoginRS;
+    public string accessToken;
+    public int currentIndex;
 
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class ApiClient : MonoBehaviour
     }
     private readonly string _baseUrl = "https://localhost:7111";
 
-    public async Task<WordDataList> GetWordsAsync()
+    public async Task<WordDataList> GetWordsAsync(int difficultyId)
     {
         string url = $"{_baseUrl}/api/Word/{topicId}/{difficultyId}";
         using UnityWebRequest request = UnityWebRequest.Get(url);
@@ -95,7 +96,6 @@ public class ApiClient : MonoBehaviour
         words.words.ForEach(word =>
         {
             word.word = word.word.ToUpper();
-            Debug.Log("Word " + word.word);
         });
 
         return words;

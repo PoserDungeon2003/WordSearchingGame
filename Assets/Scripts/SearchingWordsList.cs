@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnlockLevelPopup;
 
 public class SearchingWordsList : MonoBehaviour
 {
@@ -19,7 +20,10 @@ public class SearchingWordsList : MonoBehaviour
 
     private async void Start()
     {
-        var words = await ApiClient.Instance.GetWordsAsync();
+        var categoryName = currentGameData.selectedCategoryName;
+        var currentBoardIndex = DataSaver.ReadCategoryCurrentIndexValues(categoryName);
+        Debug.Log("currentBoardIndex: " + currentBoardIndex);
+        var words = await ApiClient.Instance.GetWordsAsync(currentBoardIndex + 1);
         currentGameData.selectedBoardData.SearchWords = words.words;
 
         _wordsNumber = currentGameData.selectedBoardData.SearchWords.Count;

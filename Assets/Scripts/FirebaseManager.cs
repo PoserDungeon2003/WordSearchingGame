@@ -55,6 +55,8 @@ public class FirebaseManager : MonoBehaviour
     {
         Debug.Log("Login completed");
         string accessToken = ServiceManager.GetService<OpenIDConnectService>().AccessToken;
+        ApiClient.Instance.accessToken = accessToken;
+        //SignInUsingFirebase(accessToken);
         var userInfo = await ServiceManager.GetService<OpenIDConnectService>().GetUserDataAsync();
         var signupUser = new UserData
         {
