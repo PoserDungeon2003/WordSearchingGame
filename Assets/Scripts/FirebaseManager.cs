@@ -56,6 +56,11 @@ public class FirebaseManager : MonoBehaviour
         Debug.Log("Login completed");
         string accessToken = ServiceManager.GetService<OpenIDConnectService>().AccessToken;
         var userInfo = await ServiceManager.GetService<OpenIDConnectService>().GetUserDataAsync();
-        Debug.Log("Access token: " + userInfo.Username);
+        var signupUser = new UserData
+        {
+            email = userInfo.Email,
+            username = userInfo.Username,
+        };
+        StartCoroutine(ApiClient.Instance.GoogleSignupUser(signupUser));
     }
 }
