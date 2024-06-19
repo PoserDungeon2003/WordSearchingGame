@@ -16,6 +16,7 @@ public class DataSaver : MonoBehaviour
     {
         PlayerPrefs.SetInt(categoryName, currentIndex);
         PlayerPrefs.Save();
+        ApiClient.Instance.SendUserProgress(categoryName, currentIndex, false);
     }
 
     public static void ClearGameData(GameLevelData levelData)

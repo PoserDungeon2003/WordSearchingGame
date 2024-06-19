@@ -172,7 +172,6 @@ public class WordsGrid : MonoBehaviour
         }
         foreach (var character in characters)
         {
-            Debug.Log("Characters" + character + " ");
         }
     }
 }

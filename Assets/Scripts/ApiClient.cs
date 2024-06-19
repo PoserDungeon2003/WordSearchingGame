@@ -1,3 +1,4 @@
+using i5.Toolkit.Core.RocketChatClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,14 +44,29 @@ public class UserLoginRS
     public string email;
 }
 
+[Serializable]
+public class UserProgressRequest
+{
+    public int userId;
+    public string difficultyLevel;
+    public string topicName;
+    public int levelNumber;
+    public bool completed;
+    public string completionTime;
+}
+
 public class ApiClient : MonoBehaviour
 {
+    [HideInInspector]
     public int topicId;
+    [HideInInspector]
     public int difficultyId;
     public static ApiClient Instance;
-    public UserLoginRS _userLoginRS;
-    public string accessToken;
+    private UserLoginRS _userLoginRS;
+    private string accessToken;
+    [HideInInspector]
     public int currentIndex;
+    [HideInInspector]
     public WordDataList words;
 
     private void Awake()
@@ -65,11 +81,27 @@ public class ApiClient : MonoBehaviour
             Destroy(this);
         }
     }
+
+    private void Update()
+    {
+        //if (ApiClient.Instance.GetAccessToken() != null)
+        //{
+        //    GoogleLoginButton.SetActive(false);
+        //    LogoutButton.SetActive(true);
+        //}
+        //else
+        //{
+        //    GoogleLoginButton.SetActive(true);
+        //    LogoutButton.SetActive(false);
+        //}
+    }
+
     private readonly string _baseUrl = "https://localhost:7111";
 
     public async Task<WordDataList> GetWordsAsync(int difficultyId)
     {
-        string url = $"{_baseUrl}/api/Word/{topicId}/{difficultyId}";
+        this.difficultyId = difficultyId;
+        string url = $"{_baseUrl}/api/Word/{topicId}/{this.difficultyId}";
         using UnityWebRequest request = UnityWebRequest.Get(url);
 
         var operation = request.SendWebRequest();
@@ -162,7 +194,84 @@ public class ApiClient : MonoBehaviour
         UserLoginRS userLoginRS = JsonUtility.FromJson<UserLoginRS>(response);
 
         _userLoginRS = userLoginRS;
-        Debug.Log("User Login Response: " + _userLoginRS.username);
+        Debug.Log("Login success: " + _userLoginRS.username);
         yield return userLoginRS;
+    }
+
+    public async void SendUserProgress(string topicName, int currentIndex, bool completed)
+    {
+        string difficulty;
+
+        switch(difficultyId)
+        {
+            case 1:
+                difficulty = "Easy";
+                break;
+            case 2:
+                difficulty = "Medium";
+                break;
+            case 3:
+                difficulty = "Hard";
+                break;
+            default:
+                difficulty = "Easy";
+                break;
+        }
+        // Create a new UserProgressRequest object
+        UserProgressRequest requestObject = new UserProgressRequest()
+        {
+            userId = _userLoginRS.userId,
+            difficultyLevel = difficulty,
+            topicName = topicName,
+            levelNumber = currentIndex + 1,
+            completed = completed,
+            completionTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ")
+        };
+        // Convert the requestObject to JSON format
+        string jsonRequestBody = JsonUtility.ToJson(requestObject);
+        Debug.Log("Send user progress: " + jsonRequestBody);
+
+        // Define the URL to which the POST request will be sent
+        string url = $"{_baseUrl}/api/UserProgress/v2"; // Replace with your actual API endpoint
+
+        // Create a UnityWebRequest POST object
+        UnityWebRequest request = new UnityWebRequest(url, "POST");
+
+        // Set the request headers
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Accept", "application/json");
+
+        // Attach the JSON data to the request
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+
+        // Send the request
+        var operation = request.SendWebRequest();
+        if (!operation.isDone)
+        {
+            await Task.Yield();
+        }
+
+        // Check for errors
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error sending POST request: " + request.error);
+        }
+        else
+        {
+            Debug.Log("POST request successful!");
+            Debug.Log("Response: " + request.downloadHandler.text);
+        }
+    }
+
+    public string GetAccessToken()
+    {
+        return accessToken;
+    }
+
+    public void SetAccessToken(string token)
+    {
+        accessToken = token;
     }
 }

@@ -13,6 +13,10 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
     {
         OpenIDConnectService openIDConnectService = new OpenIDConnectService();
         openIDConnectService.OidcProvider = new GoogleOidcProvider();
+        if (!ServiceManager.ServiceExists<OpenIDConnectService>())
+        {
+            ServiceManager serviceManager = new ServiceManager();
+        }
 
 #if !UNITY_EDITOR
 
@@ -28,6 +32,10 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
 
     protected override void UnRegisterServices()
     {
-        throw new System.NotImplementedException();
+        if (ServiceManager.ServiceExists<OpenIDConnectService>())
+        {
+            Debug.Log("Unregistering OpenIDConnectService: " + ServiceManager.ServiceExists<OpenIDConnectService>());
+            ServiceManager.RemoveService<OpenIDConnectService>();
+        }
     }
 }

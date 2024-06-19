@@ -16,15 +16,6 @@ public class SelectPuzzleButton : MonoBehaviour
 
     private string gameSceneName = "GameScene";
     private bool _levelLocked;
-    enum topicId
-    {
-        Animals=1,
-        Food=2,
-        Sport=3,
-        Hobbies=4,
-        Work=5,
-        Countries=6
-    }
 
     private void Start()
     {
@@ -88,21 +79,9 @@ public class SelectPuzzleButton : MonoBehaviour
     private void OnButtonClick()
     {
         gameData.selectedCategoryName = gameObject.name;
-        int topicId = GetTopicIdNumber(gameObject.name.ToString());
+        int topicId = GameUltility.GetTopicIdNumber(gameObject.name.ToString());
         ApiClient.Instance.topicId = topicId;
         //AdManager.Instance.ShowInterstitialAd();
         SceneManager.LoadScene(gameSceneName);
-    }
-
-    static int GetTopicIdNumber(string topicName)
-    {
-        if (Enum.TryParse(typeof(topicId), topicName, true, out var result))
-        {
-            return (int)result;
-        }
-        else
-        {
-            throw new ArgumentException("Invalid topic name");
-        }
     }
 }

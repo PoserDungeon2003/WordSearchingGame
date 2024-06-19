@@ -11,12 +11,18 @@ public class FirebaseManager : MonoBehaviour
 {
     private FirebaseAuth auth;
 
-    private void Start()
+    private async void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
 
     public async void SignIn() => await SignInWithGoogle();
+
+    public void SignOut()
+    {
+        auth.SignOut();
+        ServiceManager.GetService<OpenIDConnectService>().Logout();
+    }
 
     private void SignInUsingFirebase(string accessToken)
     {
@@ -53,9 +59,8 @@ public class FirebaseManager : MonoBehaviour
 
     private async void OnLoginCompleted(object sender, EventArgs e)
     {
-        Debug.Log("Login completed");
         string accessToken = ServiceManager.GetService<OpenIDConnectService>().AccessToken;
-        ApiClient.Instance.accessToken = accessToken;
+        ApiClient.Instance.SetAccessToken(accessToken);
         //SignInUsingFirebase(accessToken);
         var userInfo = await ServiceManager.GetService<OpenIDConnectService>().GetUserDataAsync();
         var signupUser = new UserData
