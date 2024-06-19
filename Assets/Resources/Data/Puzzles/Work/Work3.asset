@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Work3
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 60
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - a
+    - ' '
+    - t
+    - ' '
+    - ' '
+    - ' '
+  - Size: 6
+    Row:
+    - s
+    - s
+    - k
+    - o
+    - ' '
+    - ' '
+  - Size: 6
+    Row:
+    - y
+    - ' '
+    - s
+    - ' '
+    - n
+    - ' '
+  - Size: 6
+    Row:
+    - e
+    - ' '
+    - a
+    - e
+    - ' '
+    - k
+  - Size: 6
+    Row:
+    - k
+    - ' '
+    - t
+    - ' '
+    - s
+    - ' '
+  - Size: 6
+    Row:
+    - y
+    - r
+    - a
+    - l
+    - a
+    - s
   SearchWords: []

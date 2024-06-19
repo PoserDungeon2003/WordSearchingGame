@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Sport3
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 60
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - L
+    - T
+    - S
+    - E
+    - R
+    - W
+  - Size: 6
+    Row:
+    - U
+    - A
+    - U
+    - L
+    - A
+    - Z
+  - Size: 6
+    Row:
+    - G
+    - V
+    - S
+    - L
+    - R
+    - S
+  - Size: 6
+    Row:
+    - E
+    - Z
+    - R
+    - T
+    - Q
+    - U
+  - Size: 6
+    Row:
+    - Q
+    - Q
+    - P
+    - N
+    - U
+    - R
+  - Size: 6
+    Row:
+    - F
+    - U
+    - T
+    - S
+    - F
+    - F
   SearchWords: []

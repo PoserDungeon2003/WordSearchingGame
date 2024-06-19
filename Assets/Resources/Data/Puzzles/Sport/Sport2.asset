@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Sport2
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 90
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - R
+    - A
+    - G
+    - O
+    - Y
+    - G
+  - Size: 6
+    Row:
+    - J
+    - U
+    - D
+    - O
+    - N
+    - L
+  - Size: 6
+    Row:
+    - A
+    - C
+    - G
+    - I
+    - M
+    - H
+  - Size: 6
+    Row:
+    - J
+    - I
+    - X
+    - B
+    - B
+    - Y
+  - Size: 6
+    Row:
+    - G
+    - O
+    - H
+    - C
+    - Y
+    - A
+  - Size: 6
+    Row:
+    - B
+    - A
+    - L
+    - L
+    - E
+    - T
   SearchWords: []
