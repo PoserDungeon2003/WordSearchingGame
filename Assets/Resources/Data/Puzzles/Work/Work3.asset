@@ -18,50 +18,50 @@ MonoBehaviour:
   Board:
   - Size: 6
     Row:
-    - a
-    - ' '
-    - t
-    - ' '
-    - ' '
-    - ' '
+    - A
+    - X
+    - T
+    - L
+    - D
+    - T
   - Size: 6
     Row:
-    - s
-    - s
-    - k
-    - o
-    - ' '
-    - ' '
+    - S
+    - S
+    - K
+    - O
+    - P
+    - C
   - Size: 6
     Row:
-    - y
-    - ' '
-    - s
-    - ' '
-    - n
-    - ' '
+    - Y
+    - H
+    - S
+    - I
+    - N
+    - Y
   - Size: 6
     Row:
-    - e
-    - ' '
-    - a
-    - e
-    - ' '
-    - k
+    - E
+    - A
+    - A
+    - E
+    - R
+    - K
   - Size: 6
     Row:
-    - k
-    - ' '
-    - t
-    - ' '
-    - s
-    - ' '
+    - K
+    - Y
+    - T
+    - F
+    - S
+    - W
   - Size: 6
     Row:
-    - y
-    - r
-    - a
-    - l
-    - a
-    - s
+    - Y
+    - R
+    - A
+    - L
+    - A
+    - S
   SearchWords: []
