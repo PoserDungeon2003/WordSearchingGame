@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Hobbies3
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 60
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - I
+    - F
+    - L
+    - O
+    - G
+    - Q
+  - Size: 6
+    Row:
+    - E
+    - L
+    - Z
+    - Z
+    - U
+    - P
+  - Size: 6
+    Row:
+    - E
+    - C
+    - C
+    - I
+    - I
+    - T
+  - Size: 6
+    Row:
+    - F
+    - A
+    - L
+    - Y
+    - T
+    - I
+  - Size: 6
+    Row:
+    - D
+    - T
+    - M
+    - Q
+    - A
+    - K
+  - Size: 6
+    Row:
+    - S
+    - G
+    - I
+    - C
+    - R
+    - S
   SearchWords: []

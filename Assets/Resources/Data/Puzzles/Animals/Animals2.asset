@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Animals2
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 90
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - K
+    - W
+    - J
+    - G
+    - T
+    - E
+  - Size: 6
+    Row:
+    - R
+    - R
+    - A
+    - L
+    - Z
+    - L
+  - Size: 6
+    Row:
+    - A
+    - A
+    - E
+    - E
+    - I
+    - G
+  - Size: 6
+    Row:
+    - H
+    - C
+    - B
+    - O
+    - D
+    - A
+  - Size: 6
+    Row:
+    - S
+    - R
+    - N
+    - L
+    - J
+    - E
+  - Size: 6
+    Row:
+    - A
+    - D
+    - N
+    - A
+    - P
+    - O
   SearchWords: []

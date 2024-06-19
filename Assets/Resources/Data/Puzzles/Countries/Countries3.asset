@@ -12,8 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Countries3
   m_EditorClassIdentifier: 
-  timeInSeconds: 0
-  Columns: 0
-  Rows: 0
-  Board: []
+  timeInSeconds: 60
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - H
+    - D
+    - H
+    - P
+    - K
+    - C
+  - Size: 6
+    Row:
+    - H
+    - A
+    - E
+    - A
+    - Y
+    - N
+  - Size: 6
+    Row:
+    - A
+    - R
+    - I
+    - P
+    - D
+    - T
+  - Size: 6
+    Row:
+    - U
+    - U
+    - R
+    - T
+    - J
+    - O
+  - Size: 6
+    Row:
+    - R
+    - U
+    - S
+    - S
+    - I
+    - A
+  - Size: 6
+    Row:
+    - S
+    - E
+    - R
+    - B
+    - I
+    - A
   SearchWords: []

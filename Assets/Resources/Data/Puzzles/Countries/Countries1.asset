@@ -12,90 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Countries1
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
-  Columns: 8
-  Rows: 8
+  timeInSeconds: 120
+  Columns: 6
+  Rows: 6
   Board:
-  - Size: 8
+  - Size: 6
     Row:
-    - V
-    - M
-    - Q
-    - E
-    - Y
-    - R
-    - M
-    - Q
-  - Size: 8
-    Row:
-    - U
-    - I
     - J
-    - U
-    - Z
-    - I
-    - O
-    - Z
-  - Size: 8
-    Row:
-    - T
-    - G
+    - F
+    - F
+    - H
+    - X
     - E
+  - Size: 6
+    Row:
     - N
+    - A
     - W
-    - U
-    - D
-    - J
-  - Size: 8
-    Row:
+    - I
     - B
-    - V
-    - C
-    - T
-    - H
-    - E
-    - D
-    - X
-  - Size: 8
-    Row:
-    - C
-    - Q
-    - X
-    - K
-    - N
-    - G
-    - D
-    - S
-  - Size: 8
-    Row:
-    - T
-    - S
-    - U
-    - Q
-    - G
-    - A
-    - Q
     - L
-  - Size: 8
+  - Size: 6
     Row:
-    - Y
+    - R
+    - I
+    - P
+    - T
+    - E
+    - I
+  - Size: 6
+    Row:
     - V
-    - U
-    - U
     - D
-    - K
-    - M
-    - H
-  - Size: 8
-    Row:
-    - M
-    - B
-    - S
+    - L
     - A
     - X
-    - E
-    - P
+    - H
+  - Size: 6
+    Row:
+    - B
+    - N
+    - R
+    - L
+    - N
     - C
-  SearchWords:
-  - word: Vietnam
-    Found: 0
+  - Size: 6
+    Row:
+    - H
+    - I
+    - T
+    - Y
+    - Y
+    - L
+  SearchWords: []

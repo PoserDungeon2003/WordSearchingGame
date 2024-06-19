@@ -12,57 +12,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Hobbies1
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
+  timeInSeconds: 120
   Columns: 6
   Rows: 6
   Board:
   - Size: 6
     Row:
-    - C
-    - J
-    - H
-    - T
-    - Q
+    - F
     - X
-  - Size: 6
-    Row:
-    - X
-    - O
-    - D
-    - V
-    - O
-    - T
-  - Size: 6
-    Row:
     - S
-    - X
-    - D
-    - X
-    - V
     - F
+    - Z
+    - G
   - Size: 6
     Row:
-    - G
-    - Y
-    - Q
-    - I
-    - F
-    - Y
+    - C
+    - P
+    - D
+    - R
+    - A
+    - W
   - Size: 6
     Row:
     - O
-    - U
-    - B
-    - L
     - N
-    - R
+    - A
+    - W
+    - Y
+    - M
   - Size: 6
     Row:
-    - R
+    - O
+    - A
     - E
-    - Q
-    - Z
+    - K
+    - I
+    - H
+  - Size: 6
+    Row:
+    - K
+    - R
+    - R
+    - W
+    - H
     - J
-    - G
+  - Size: 6
+    Row:
+    - N
+    - Z
+    - S
+    - Q
+    - V
+    - A
   SearchWords:
-  - Word: Coding
+  - word: 
+    Found: 0
