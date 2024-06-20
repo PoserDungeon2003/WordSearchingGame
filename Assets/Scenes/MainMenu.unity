@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5654068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 642132985}
+        m_TargetAssemblyTypeName: FirebaseManager, Assembly-CSharp
+        m_MethodName: SignOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5654068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +289,11 @@ MonoBehaviour:
   currentIndex: 0
   words:
     words: []
+  UserProgressResponse:
+    userId: 0
+    levelId: 0
+    completed: 0
+    completionTime: 
 --- !u!4 &169982560
 Transform:
   m_ObjectHideFlags: 0
@@ -409,6 +426,7 @@ GameObject:
   - component: {fileID: 592992440}
   - component: {fileID: 592992439}
   - component: {fileID: 592992438}
+  - component: {fileID: 592992441}
   m_Layer: 5
   m_Name: GoogleLoginButton
   m_TagString: Untagged
@@ -529,6 +547,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592992436}
   m_CullTransparentMesh: 1
+--- !u!114 &592992441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592992436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec23d37b1d6e124b896e2886196b4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  googleLoginButton: {fileID: 592992436}
+  logoutButton: {fileID: 5654065}
 --- !u!1 &642132983
 GameObject:
   m_ObjectHideFlags: 0

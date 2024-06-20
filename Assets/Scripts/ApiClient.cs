@@ -55,6 +55,15 @@ public class UserProgressRequest
     public string completionTime;
 }
 
+[Serializable]
+public class UserProgressResponse
+{
+    public int userId;
+    public int levelId;
+    public bool completed;
+    public string completionTime;
+}
+
 public class ApiClient : MonoBehaviour
 {
     [HideInInspector]
@@ -68,6 +77,8 @@ public class ApiClient : MonoBehaviour
     public int currentIndex;
     [HideInInspector]
     public WordDataList words;
+    [HideInInspector]
+    public UserProgressResponse UserProgressResponse;
 
     private void Awake()
     {
@@ -159,7 +170,11 @@ public class ApiClient : MonoBehaviour
         }
         else
         {
-            Debug.Log("Response: " + request.downloadHandler.text);
+            var response = request.downloadHandler.text;
+            UserLoginRS userLoginRS = JsonUtility.FromJson<UserLoginRS>(response);
+
+            _userLoginRS = userLoginRS;
+            Debug.Log("Sign up completed: " + _userLoginRS.username);
         }
     }
 
@@ -239,7 +254,6 @@ public class ApiClient : MonoBehaviour
 
         // Set the request headers
         request.SetRequestHeader("Content-Type", "application/json");
-        request.SetRequestHeader("Accept", "application/json");
 
         // Attach the JSON data to the request
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
@@ -248,20 +262,23 @@ public class ApiClient : MonoBehaviour
 
         // Send the request
         var operation = request.SendWebRequest();
-        if (!operation.isDone)
+        while (!operation.isDone)
         {
             await Task.Yield();
         }
 
+        Debug.Log("Response code: " + request.responseCode);
         // Check for errors
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Error sending POST request: " + request.error);
+            Debug.LogError("Error sending POST request: " + request.error.ToString());
         }
         else
         {
             Debug.Log("POST request successful!");
-            Debug.Log("Response: " + request.downloadHandler.text);
+            var response = request.downloadHandler.text;
+            UserProgressResponse userProgressResponse = JsonUtility.FromJson<UserProgressResponse>(response);
+            Debug.Log("Response: " + userProgressResponse.completionTime);
         }
     }
 

@@ -22,6 +22,7 @@ public class FirebaseManager : MonoBehaviour
     {
         auth.SignOut();
         ServiceManager.GetService<OpenIDConnectService>().Logout();
+        ApiClient.Instance.SetAccessToken(null);
     }
 
     private void SignInUsingFirebase(string accessToken)
