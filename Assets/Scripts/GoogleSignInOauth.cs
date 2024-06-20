@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GoogleSignInOauth : BaseServiceBootstrapper
 {
-    public ClientDataObject googleClientDataObject;
+    public ClientDataObject androidGoogleClientDataObject;
     public ClientDataObject googleClientDataObjectForEditorOnly;
 
     protected override void RegisterServices()
@@ -18,14 +18,13 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
             ServiceManager serviceManager = new ServiceManager();
         }
 
-#if !UNITY_EDITOR
-
-        openIDConnectService.OidcProvider.ClientData = googleClientDataObject.clientData;
-        openIDConnectService.RedirectURI = "com.pru.wordsearchinggame:/";
-#else
+#if UNITY_EDITOR
         openIDConnectService.OidcProvider.ClientData = googleClientDataObjectForEditorOnly.clientData;
         openIDConnectService.RedirectURI = "https://www.youtube.com/";
         openIDConnectService.ServerListener.ListeningUri = "http://127.0.0.1:52229/";
+#elif UNITY_ANDROID
+        openIDConnectService.OidcProvider.ClientData = androidGoogleClientDataObject.clientData;
+        openIDConnectService.RedirectURI = "com.pru.wordsearchinggame:/";
 #endif
         ServiceManager.RegisterService(openIDConnectService);
     }
