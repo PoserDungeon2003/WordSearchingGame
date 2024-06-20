@@ -46,16 +46,13 @@ Open terminal/cmd and type:
 ```sh
 git clone https://github.com/PoserDungeon2003/WordSearchingGame.git
 ```
-*Note: Because the project is in development, you need to checkout to the dev branch.*
-
 After cloning the project, change the directory to the project:
 ```sh
 cd WordSearchingGame
 ```
-Then checkout to the dev branch:
-```sh
-git checkout dev
-```
+### IMPORTANT: You need to add 2 assets file storing OAuth key before opening the project.
+Because this game have Google Login, The Google Oauth keey have been ignored from this project for security. You can find it in the Credentials folder.
+Copy those files and paste it into WordSearchingGame/Assets/Credentials
 
 ### Step 2: Install Unity Hub
 Install Unity Hub (any version) and the correct Unity Editor version (current version: 2022.3.27f1).
