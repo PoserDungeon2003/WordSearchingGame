@@ -8,6 +8,7 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
 {
     public ClientDataObject androidGoogleClientDataObject;
     public ClientDataObject googleClientDataObjectForEditorOnly;
+    public ClientDataObject WindowsClientDataObject;
 
     protected override void RegisterServices()
     {

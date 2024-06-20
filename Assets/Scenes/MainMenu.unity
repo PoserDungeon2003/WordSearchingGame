@@ -688,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   androidGoogleClientDataObject: {fileID: 11400000, guid: 7cdd5eea6e79e20438d64738502dca3b, type: 2}
   googleClientDataObjectForEditorOnly: {fileID: 11400000, guid: 3b461dbaba5517a4e9cfb7d79bf8048a, type: 2}
+  WindowsClientDataObject: {fileID: 11400000, guid: b2a4f7a2207871540ad5116be61c6797, type: 2}
 --- !u!1 &778834606
 GameObject:
   m_ObjectHideFlags: 0
