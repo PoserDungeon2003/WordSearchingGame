@@ -108,8 +108,6 @@ public class ApiClient : MonoBehaviour
     }
 #if UNITY_EDITOR
     private readonly string _baseUrl = "https://localhost:7111";
-#else
-    private readonly string _baseUrl = "https://poserdungeon.myddns.me:7111";
 #endif
 
     public async Task<WordDataList> GetWordsAsync(int difficultyId)
