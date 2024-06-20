@@ -649,8 +649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c5988465b142641883f82256d0bb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleClientDataObject: {fileID: 11400000, guid: 48a3e0756a6bba748b6ac2f9902f3696, type: 2}
-  googleClientDataObjectForEditorOnly: {fileID: 11400000, guid: a1b1ac0b3e68f4b4dbfa8e59481859aa, type: 2}
+  googleClientDataObject: {fileID: 11400000, guid: 7cdd5eea6e79e20438d64738502dca3b, type: 2}
+  googleClientDataObjectForEditorOnly: {fileID: 11400000, guid: 3b461dbaba5517a4e9cfb7d79bf8048a, type: 2}
 --- !u!1 &778834606
 GameObject:
   m_ObjectHideFlags: 0
