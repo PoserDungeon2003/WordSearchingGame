@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "544069774765",
+    "firebase_url": "https://admob-app-id-7538592228.firebaseio.com",
+    "project_id": "admob-app-id-7538592228",
+    "storage_bucket": "admob-app-id-7538592228.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544069774765:android:5f59fc455537023d",
+        "android_client_info": {
+          "package_name": "batterydoctor.fastcharger.batterysaver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY8qhVQOk_X_1rfPPhLaOY3H8gSI0zZbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544069774765:android:f7d2ebcdb098394f",
+        "android_client_info": {
+          "package_name": "com.nianticlabs.pokemongo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY8qhVQOk_X_1rfPPhLaOY3H8gSI0zZbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544069774765:android:7b066f154a79098c2b4524",
+        "android_client_info": {
+          "package_name": "com.pru.wordsearchinggame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY8qhVQOk_X_1rfPPhLaOY3H8gSI0zZbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544069774765:android:e880e5e91eccb086",
+        "android_client_info": {
+          "package_name": "com.supercell.clashofclans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY8qhVQOk_X_1rfPPhLaOY3H8gSI0zZbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544069774765-choarhr8cpr07jlcn9rd1fl24d30brii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,7 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
     public ClientDataObject androidGoogleClientDataObject;
     public ClientDataObject googleClientDataObjectForEditorOnly;
     public ClientDataObject WindowsClientDataObject;
+    public ClientDataObject iOSClientDataObject;
 
     protected override void RegisterServices()
     {
@@ -26,6 +27,13 @@ public class GoogleSignInOauth : BaseServiceBootstrapper
 #elif UNITY_ANDROID
         openIDConnectService.OidcProvider.ClientData = androidGoogleClientDataObject.clientData;
         openIDConnectService.RedirectURI = "com.pru.wordsearchinggame:/";
+#elif UNITY_IOS
+        openIDConnectService.OidcProvider.ClientData = iOSClientDataObject.clientData;
+        openIDConnectService.RedirectURI = "com.pru.wordsearchinggame:/";
+#else
+        openIDConnectService.OidcProvider.ClientData = WindowsClientDataObject.clientData;
+        openIDConnectService.RedirectURI = "com.pru.wordsearchinggame:/";
+        openIDConnectService.ServerListener.ListeningUri = "http://127.0.0.1:52229/";
 #endif
         ServiceManager.RegisterService(openIDConnectService);
     }
