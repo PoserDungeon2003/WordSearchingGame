@@ -114,7 +114,7 @@ cd WordSearchingGame
 
 **You must do this before open the Unity Editor**
 
-Because this game has Google Login, the Google OAuth keys have been ignored from this project for security reasons. Download the Credentials zip file,  copy all asset files inside the folder and paste them into `WordSearchingGame/Assets/Credentials`.
+Because this game has Google Login, the Google OAuth keys have been ignored from this project for security reasons. Download the Credentials zip file, extract, copy folder `Credentials` and paste it to `Assets` folder. The path should look like this `WordSearchingGame/Assets/Credentials`.
 
 ### Step 2: Install Unity Hub
 
