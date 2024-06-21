@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
+  m_Name: Animals3
+  m_EditorClassIdentifier: 
+  timeInSeconds: 60
+  Columns: 6
+  Rows: 6
+  Board:
+  - Size: 6
+    Row:
+    - T
+    - K
+    - U
+    - O
+    - R
+    - F
+  - Size: 6
+    Row:
+    - O
+    - A
+    - C
+    - K
+    - A
+    - A
+  - Size: 6
+    Row:
+    - U
+    - L
+    - B
+    - L
+    - G
+    - L
+  - Size: 6
+    Row:
+    - C
+    - H
+    - C
+    - M
+    - U
+    - L
+  - Size: 6
+    Row:
+    - A
+    - O
+    - T
+    - F
+    - O
+    - O
+  - Size: 6
+    Row:
+    - N
+    - D
+    - N
+    - X
+    - C
+    - W
+  SearchWords: []

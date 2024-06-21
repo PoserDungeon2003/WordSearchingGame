@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class SelectPuzzleButton : MonoBehaviour
 {
@@ -77,6 +79,8 @@ public class SelectPuzzleButton : MonoBehaviour
     private void OnButtonClick()
     {
         gameData.selectedCategoryName = gameObject.name;
+        int topicId = GameUltility.GetTopicIdNumber(gameObject.name.ToString());
+        ApiClient.Instance.topicId = topicId;
         //AdManager.Instance.ShowInterstitialAd();
         SceneManager.LoadScene(gameSceneName);
     }

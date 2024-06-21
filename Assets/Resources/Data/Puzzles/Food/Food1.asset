@@ -12,129 +12,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Food1
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
-  Columns: 10
-  Rows: 10
+  timeInSeconds: 120
+  Columns: 6
+  Rows: 6
   Board:
-  - Size: 10
+  - Size: 6
     Row:
-    - B
-    - A
-    - G
-    - A
-    - G
-    - Y
-    - H
+    - N
+    - Z
     - F
-    - G
+    - T
     - M
-  - Size: 10
+    - Z
+  - Size: 6
     Row:
-    - R
-    - M
-    - U
+    - O
+    - O
+    - A
+    - V
+    - L
+    - A
+  - Size: 6
+    Row:
+    - P
     - H
-    - S
+    - O
+    - H
+    - D
+    - C
+  - Size: 6
+    Row:
+    - E
+    - U
+    - Z
+    - D
+    - E
+    - A
+  - Size: 6
+    Row:
+    - G
+    - U
+    - R
+    - P
     - L
     - K
-    - L
-    - U
-    - C
-  - Size: 10
+  - Size: 6
     Row:
+    - G
+    - Z
+    - R
+    - I
+    - C
     - E
-    - G
-    - U
-    - B
-    - R
-    - X
-    - V
-    - V
-    - R
-    - O
-  - Size: 10
-    Row:
-    - A
-    - J
-    - Q
-    - W
-    - F
-    - C
-    - Z
-    - H
-    - F
-    - U
-  - Size: 10
-    Row:
-    - D
-    - Z
-    - L
-    - R
-    - F
-    - Y
-    - X
-    - N
-    - I
-    - I
-  - Size: 10
-    Row:
-    - N
-    - B
-    - C
-    - V
-    - I
-    - J
-    - I
-    - F
-    - Y
-    - V
-  - Size: 10
-    Row:
-    - L
-    - D
-    - R
-    - H
-    - H
-    - J
-    - F
-    - E
-    - I
-    - L
-  - Size: 10
-    Row:
-    - R
-    - G
-    - Z
-    - N
-    - V
-    - D
-    - M
-    - W
-    - V
-    - T
-  - Size: 10
-    Row:
-    - Z
-    - F
-    - D
-    - Y
-    - A
-    - X
-    - D
-    - F
-    - M
-    - B
-  - Size: 10
-    Row:
-    - H
-    - C
-    - R
-    - J
-    - G
-    - Z
-    - M
-    - G
-    - P
-    - A
   SearchWords:
-  - Word: BREAD
+  - word: CAKE
+    Found: 1
+  - word: RICE
+    Found: 1
+  - word: PHO
+    Found: 1
+  - word: NOODLE
+    Found: 1
+  - word: EGG
+    Found: 1

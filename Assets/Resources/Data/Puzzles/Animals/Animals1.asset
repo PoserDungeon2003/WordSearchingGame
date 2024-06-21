@@ -12,57 +12,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Animals1
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
+  timeInSeconds: 120
   Columns: 6
   Rows: 6
   Board:
   - Size: 6
     Row:
-    - L
-    - J
-    - T
+    - G
+    - A
+    - C
     - E
-    - P
-    - L
-  - Size: 6
-    Row:
-    - W
+    - K
     - B
-    - R
-    - G
-    - N
-    - M
   - Size: 6
     Row:
-    - M
-    - E
-    - D
-    - W
-    - D
-    - I
-  - Size: 6
-    Row:
-    - E
-    - L
-    - O
-    - G
-    - L
+    - S
+    - H
+    - Y
     - P
+    - F
+    - G
   - Size: 6
     Row:
     - T
-    - Q
+    - S
+    - S
     - G
-    - S
-    - S
+    - W
     - X
   - Size: 6
     Row:
-    - M
-    - E
-    - S
+    - A
+    - D
+    - R
+    - I
+    - B
+    - L
+  - Size: 6
+    Row:
+    - C
     - O
-    - K
+    - W
+    - P
     - F
+    - W
+  - Size: 6
+    Row:
+    - H
+    - G
+    - K
+    - R
+    - B
+    - Z
   SearchWords:
-  - Word: Dog
+  - word: 
+    Found: 0

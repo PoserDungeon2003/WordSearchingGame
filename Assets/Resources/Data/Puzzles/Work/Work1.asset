@@ -12,128 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb78ca547fd0e54dbd6676178ce52c1, type: 3}
   m_Name: Work1
   m_EditorClassIdentifier: 
-  timeInSeconds: 200
-  Columns: 10
-  Rows: 10
+  timeInSeconds: 120
+  Columns: 6
+  Rows: 6
   Board:
-  - Size: 10
+  - Size: 6
     Row:
-    - G
-    - K
-    - X
-    - Z
-    - F
-    - X
-    - B
-    - F
-    - Z
-    - K
-  - Size: 10
-    Row:
-    - B
-    - W
-    - S
-    - A
-    - B
-    - S
-    - R
-    - X
-    - Y
-    - K
-  - Size: 10
-    Row:
-    - Y
-    - B
-    - L
-    - R
     - E
-    - M
-    - E
-    - I
-    - R
-    - Z
-  - Size: 10
-    Row:
+    - T
     - C
-    - Z
-    - I
-    - D
-    - B
-    - D
-    - E
-    - Y
-    - B
-    - L
-  - Size: 10
-    Row:
-    - L
-    - Y
-    - R
-    - I
-    - S
-    - B
-    - N
-    - B
-    - X
     - H
-  - Size: 10
-    Row:
-    - E
-    - V
-    - X
-    - I
-    - Y
-    - O
-    - I
-    - O
-    - Y
-    - Q
-  - Size: 10
-    Row:
-    - Z
-    - E
-    - J
+    - D
     - P
-    - N
-    - T
-    - G
-    - Q
-    - X
-    - R
-  - Size: 10
+  - Size: 6
     Row:
-    - S
-    - B
-    - D
-    - C
-    - Z
-    - V
-    - N
-    - K
-    - L
-    - V
-  - Size: 10
-    Row:
-    - O
-    - H
-    - R
-    - O
-    - C
     - M
-    - E
-    - V
-    - I
-    - Z
-  - Size: 10
-    Row:
-    - Q
-    - H
-    - E
-    - X
-    - T
-    - B
-    - G
-    - U
-    - B
     - W
+    - E
+    - F
+    - C
+    - Z
+  - Size: 6
+    Row:
+    - A
+    - S
+    - L
+    - E
+    - S
+    - N
+  - Size: 6
+    Row:
+    - I
+    - M
+    - I
+    - X
+    - M
+    - A
+  - Size: 6
+    Row:
+    - L
+    - J
+    - F
+    - Z
+    - S
+    - L
+  - Size: 6
+    Row:
+    - T
+    - A
+    - S
+    - K
+    - Z
+    - P
   SearchWords: []
