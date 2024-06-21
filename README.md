@@ -122,11 +122,11 @@ Install Unity Hub (any version) and the correct Unity Editor version (current ve
 
 ### Step 3: Launch Unity Editor
 
-After installing the Unity Editor, launch it. The editor should look like this:
+After installing the Unity Editor, launch the project from Unity Hub
 
-### Step 4: Open Game Scene
+### Step 4: Open Main Menu Scene
 
-In the project tab, navigate to the `Scenes` folder and open `GameScene`.
+In the project tab, navigate to the `Scenes` folder and open `MainMenu`.
 
 ### Step 5: Start the Game
 
