@@ -110,9 +110,11 @@ After cloning the project, change the directory to the project:
 cd WordSearchingGame
 ```
 
-### IMPORTANT: You need to add 2 assets files storing OAuth keys before opening the project.
+### IMPORTANT: Google OAuth
 
-Because this game has Google Login, the Google OAuth keys have been ignored from this project for security reasons. You can find them in the Credentials folder. Copy those files and paste them into `WordSearchingGame/Assets/Credentials`.
+**You must do this before open the Unity Editor**
+
+Because this game has Google Login, the Google OAuth keys have been ignored from this project for security reasons. Download the Credentials zip file,  copy all asset files inside the folder and paste them into `WordSearchingGame/Assets/Credentials`.
 
 ### Step 2: Install Unity Hub
 
